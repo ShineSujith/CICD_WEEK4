@@ -1,9 +1,6 @@
 package ie.atu.week4_lab3;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,8 +17,8 @@ public class Person {
     private String position;
     @NotBlank(message = "Department can not be blank")
     private String department;
-    @NotNull(message = "id can not be Null")
+    @PositiveOrZero(message = "id is invalid")
     private int id;
-    @Min(value = 0, message = "age must be greater than 0")
+    @Min(value = 18, message = "age must be greater than 18")
     private int age;
 }
